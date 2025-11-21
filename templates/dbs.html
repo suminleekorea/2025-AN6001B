@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DBS Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>DBS Prediction Page</h2>
+
+        <p>This is where your model result will show.</p>
+
+        <form action="/main" method="post">
+            <input type="submit" value="Back">
+        </form>
+    </div>
+</body>
+</html>

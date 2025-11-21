@@ -1,1 +1,20 @@
-from flask import Flask
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    return render_template("index.html")
+
+@app.route("/main", methods=["GET", "POST"])
+def main():
+    q = request.form.get("q")    # 이름 입력받기
+    print(q)                    # 터미널 출력
+    return render_template("main.html", name=q)
+
+@app.route("/dbs", methods=["GET", "POST"])
+def dbs():
+    return render_template("dbs.html")
+
+if __name__ == "__main__":
+    app.run()
